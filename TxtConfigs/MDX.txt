@@ -1,0 +1,8 @@
+SELECT 	NON EMPTY(
+					{[Version].[8 Quarter]} * {[CurrencyType].[Group (USD)]} * {[Currency].[All Currency]} * 
+					{[m_GL].[NetAmount]} * {[ProfitCenter].[All Customers]} * {[CostCenter].[CN63Unspecified]}	
+				) ON COLUMNS, 
+		NON EMPTY(
+					{[Period].[Sep-16]} * {TM1SUBSETALL(Account)}
+				 ) ON ROWS 
+FROM [Reporting General Ledger]
